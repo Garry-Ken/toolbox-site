@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>工具箱 Toolbox — PDF · 卡片 · 知识整理 · PPT · 批量处理</title>
+<meta name="description" content="一站式桌面效率工具：PDF 拆分合并、单图卡片、知识长图、一键PPT、批量改名。一次购买，终身使用。">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--brand:#0a84ff;--bg:#fbfbfd;--fg:#1d1d1f;--sub:#86868b;--card:#fff;--card-border:rgba(0,0,0,0.04);--section-bg:#f5f5f7;--radius:20px;--max-w:980px}
+@media(prefers-color-scheme:dark){:root{--bg:#000;--fg:#f5f5f7;--sub:#a1a1a6;--card:#1c1c1e;--card-border:rgba(255,255,255,0.06);--section-bg:#111}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{text-align:center;padding:100px 24px 80px}
+.hero-icon{width:80px;height:80px;border-radius:22px;background:var(--brand);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(10,132,255,0.3)}
+.hero-icon svg{width:44px;height:44px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hero h1{font-size:48px;font-weight:700;letter-spacing:-0.02em;margin-top:24px}
+.hero p{font-size:20px;color:var(--sub);margin-top:8px;max-width:520px;margin-left:auto;margin-right:auto}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;margin-top:32px;padding:14px 32px;background:var(--brand);color:#fff;border-radius:999px;font-size:17px;font-weight:600;box-shadow:0 4px 20px rgba(10,132,255,0.35);transition:transform .2s}
+.hero-cta:hover{transform:scale(1.03);text-decoration:none}
+
+/* Features */
+.features{padding:60px 0 80px}
+.features h2{text-align:center;font-size:32px;font-weight:700;margin-bottom:48px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.feat{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:28px;transition:transform .2s}
+.feat:hover{transform:translateY(-2px)}
+.feat-emoji{font-size:32px;margin-bottom:12px}
+.feat h3{font-size:18px;font-weight:600;margin-bottom:6px}
+.feat p{font-size:14px;color:var(--sub);line-height:1.7}
+
+/* Download */
+.download{background:var(--section-bg);padding:80px 0;text-align:center}
+.download h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.download .sub{font-size:16px;color:var(--sub);margin-bottom:40px}
+.dl-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.dl-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--card);border:1px solid var(--card-border);border-radius:16px;font-size:15px;font-weight:600;color:var(--fg);transition:all .2s;min-width:200px;justify-content:center}
+.dl-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,0,0,0.06);text-decoration:none}
+.dl-btn svg{width:24px;height:24px}
+
+/* Pricing */
+.pricing{padding:80px 0;text-align:center}
+.pricing h2{font-size:32px;font-weight:700;margin-bottom:12px}
+.pricing .sub{font-size:16px;color:var(--sub);margin-bottom:40px}
+.price-card{max-width:420px;margin:0 auto;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:40px;text-align:center}
+.price-tag{font-size:14px;color:var(--sub);margin-bottom:4px}
+.price-val{font-size:48px;font-weight:700;color:var(--brand)}
+.price-val small{font-size:16px;font-weight:500;color:var(--sub)}
+.price-desc{font-size:15px;color:var(--sub);margin-top:16px;margin-bottom:24px;line-height:1.8}
+.price-steps{text-align:left;background:var(--section-bg);border-radius:14px;padding:20px 24px;font-size:14px;line-height:2}
+.price-steps b{color:var(--fg)}
+.wechat-id{font-family:"SF Mono",Menlo,Monaco,Consolas,monospace;font-size:16px;font-weight:600;color:var(--brand);user-select:all}
+
+/* Footer */
+footer{text-align:center;padding:40px 24px;font-size:13px;color:var(--sub);border-top:1px solid var(--card-border)}
+
+@media(max-width:640px){
+  .hero h1{font-size:32px}
+  .hero p{font-size:16px}
+  .feat-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-icon">
+    <svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+  </div>
+  <h1>工具箱 Toolbox</h1>
+  <p>一站式桌面效率工具，6 大功能覆盖日常办公。一次购买，终身使用。</p>
+  <a href="#download" class="hero-cta">立即下载 ↓</a>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <h2>6 大核心功能</h2>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-emoji">📄</div>
+        <h3>PDF 工具箱</h3>
+        <p>拆分、合并、提取页面、旋转、重排。拖拽操作，所见即所得。支持批量处理和 ZIP 导出。</p>
+      </div>
+      <div class="feat">
+        <div class="feat-emoji">🎴</div>
+        <h3>单图卡片</h3>
+        <p>8 款精选模板、6 种比例，输入内容一键生成高清卡片。适合社交媒体、笔记封面。</p>
+      </div>
+      <div class="feat">
+        <div class="feat-emoji">📚</div>
+        <h3>知识卡片</h3>
+        <p>粘贴长文，自动识别标题和要点，排成结构化高清长图。支持 AI 智能整理（自带 API Key 即可）。</p>
+      </div>
+      <div class="feat">
+        <div class="feat-emoji">📊</div>
+        <h3>一键 PPT</h3>
+        <p>输入大纲自动排版成演示文稿。6 种主题风格，支持导出 .pptx 和高清长图。</p>
+      </div>
+      <div class="feat">
+        <div class="feat-emoji">📁</div>
+        <h3>批量处理</h3>
+        <p>批量重命名文件、批量替换文件内容。支持正则匹配、序号、日期等规则。</p>
+      </div>
+      <div class="feat">
+        <div class="feat-emoji">🖼</div>
+        <h3>图片压缩</h3>
+        <p>智能压缩图片大小，保持清晰画质不模糊。支持 WebP/JPEG/PNG，可调质量，批量处理。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download" id="download">
+  <div class="wrap">
+    <h2>免费下载</h2>
+    <p class="sub">下载即可免费试用 5 次，输入卡密激活后终身使用</p>
+    <div class="dl-grid">
+      <a href="#" class="dl-btn" title="Mac Apple Silicon (M1/M2/M3/M4)">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.99 2.97 12.5 4.7 9.56C5.55 8.1 7.13 7.17 8.82 7.15C10.1 7.13 11.32 8.01 12.11 8.01C12.89 8.01 14.37 6.94 15.92 7.11C16.57 7.14 18.39 7.38 19.56 9.07C19.47 9.13 17.49 10.26 17.51 12.67C17.54 15.56 20.06 16.47 20.09 16.48C20.06 16.55 19.67 17.94 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
+        macOS (Apple 芯片)
+      </a>
+      <a href="#" class="dl-btn" title="Windows 64-bit">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M3 12V6.5l8-1.1V12H3Zm0 .5V18l8 1.1V12.5H3ZM11.5 5.3 21 3.8V12h-9.5V5.3Zm0 7.2V19.2L21 20.7V12.5h-9.5Z"/></svg>
+        Windows
+      </a>
+      <a href="#" class="dl-btn" title="Android APK">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V7H6v11zM3.5 7C2.67 7 2 7.67 2 8.5v7c0 .83.67 1.5 1.5 1.5S5 16.33 5 15.5v-7C5 7.67 4.33 7 3.5 7zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85.55 12.95.25 12 .25s-1.85.3-2.64.88L7.88.65c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C7.6 3.55 7 4.68 7 6h10c0-1.32-.6-2.45-1.47-3.34zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/></svg>
+        Android APK
+      </a>
+    </div>
+    <p style="margin-top:24px;font-size:13px;color:var(--sub)">即将上线，敬请期待</p>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <h2>简单定价</h2>
+    <p class="sub">一次付费，永久使用，所有功能全部解锁</p>
+    <div class="price-card">
+      <div class="price-tag">终身授权</div>
+      <div class="price-val">¥599 <small>一次性</small></div>
+      <div class="price-desc">
+        全部 6 大功能 · 所有模板 · 终身免费更新<br>
+        支持分销合作，欢迎咨询
+      </div>
+      <div class="price-steps">
+        <b>购买流程：</b><br>
+        1️⃣ 添加微信：<span class="wechat-id">HZGarry</span><br>
+        2️⃣ 微信转账付款<br>
+        3️⃣ 收到卡密，在应用内激活<br>
+        4️⃣ 终身使用，后续更新免费
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2024 工具箱 Toolbox · by Garry</p>
+    <p style="margin-top:4px">AI 智能整理功能需用户自行接入 API Key（推荐 DeepSeek，几乎免费）</p>
+  </div>
+</footer>
+
+</body>
+</html>
